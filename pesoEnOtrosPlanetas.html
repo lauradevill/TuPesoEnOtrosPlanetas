@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tu peso en otro planeta</title>
+        <style>
+            body{
+                background-color: azure;
+                font-family: Georgia;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Quieres saber cúal es tu peso en otro planeta?</h1>
+        <p><strong>Sabías que?</strong> Tu peso en otros planetas varía según la gravedad del planeta en que te quieres pesar</p>
+        <script>
+            let user_weight = parseInt(prompt("¿Cúal es tu peso?"));
+            let planet = parseInt(prompt("Elige el planeta:\n 1 es marte, 2 es júpiter"));
+            let g_earth = 9.8;//Earth Gravity
+            let g_mars = 3.7;//Mars Gravity
+            let g_jupiter = 24.8;//Jupiter Gravity
+            let final_weight;
+            let planet_name;
+            if (planet == 1){
+                final_weight = (user_weight * g_mars) / g_earth;
+                planet_name = "Marte";
+            } else if (planet == 2){
+                final_weight = (user_weight * g_jupiter) / g_earth;
+                planet_name = "Júpiter";
+            } else{
+                document.write("<strong>Usted digitó un número erróneo</strong>")
+            }
+            document.write("Tu peso en " + planet_name + " es <strong>" + parseInt(final_weight) + " kg</strong>");
+        </script>
+    </body>
+</html>
